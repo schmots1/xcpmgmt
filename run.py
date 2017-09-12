@@ -159,6 +159,7 @@ def detail(name):
         if form.delete.data:
             db.session.delete(migrate)
             db.session.commit()
+            os.remove("%s.log" % name)
         if form.verify.data:
             os.popen("screen -S %s -d -m /bin/bash -c './xcp verify %s %s &> %s.log'" %(migrate.name, migrate.source, migrate.destination, migrate.name))
         return redirect(url_for('home'))
