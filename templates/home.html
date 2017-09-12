@@ -6,13 +6,15 @@
             <td>Name</td>
             <td>Source</td>
             <td>Destination</td>
+            <td>Status</td>
          </thead>
          
-         {% for row in rows %}
+         {% for migration in migrations %}
             <tr>
-               <td>{{  row["name"]  }}</td>
-               <td>{{  row["source"]  }}</td>
-               <td>{{  row["destination"]  }}</td>
+               <td><a href="{{ url_for('detail', name=migration.name) }}">{{  migration.name  }}</a></td>
+               <td>{{  migration.source  }}</td>
+               <td>{{  migration.destination  }}</td>
+               <td>{{  migration.status  }}</td>
             </tr>
          {% endfor %}
   

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}XCP Management{% endblock %}
+{% block page_content %}
+<h1>{{ migrate.name }} </h1>
+<table class="table">
+         <thead bgcolor = grey>
+            <td>Status</td>
+            <td>Source</td>
+            <td>Destination</td>
+         </thead>
+<tr>
+<td>{{ migrate.status }}</td><td>{{ migrate.source }}</td><td>{{ migrate.destination }}</td></tr>
+</table>
+
+{{ wtf.quick_form(form) }}
+
+{% endblock %}

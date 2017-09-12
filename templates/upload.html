@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}XCP Management{% endblock %}
+{% block page_content %}
+<H1>Upload {{ what }} file</H1>
+<form action="upload" method="post" enctype="multipart/form-data">
+<div class="input text">
+    <input type="file" name="file"><br>
+    <input type="submit" value="Uplad">
+</div>
+</form>
+{% endblock %}

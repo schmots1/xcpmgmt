@@ -1,15 +1,16 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}XCP Management{% endblock %}
+{% block title %}XCP Management 1.0{% endblock %}
 
 {% block head %}
 {{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link href="/static/my-style.css" rel="stylesheet" media="screen">
 {% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,6 +24,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('add') }}">Add migration pair</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
